@@ -15,34 +15,56 @@
         <p id="test-knowledge">Test your general Knowledge!</p>
     </header>
     <main>
+        <!--welcome section-->
         <section>
-            <section>
-                <!--welcome section-->
-                <div id="welcome" class="section show">
-                    <!--create a username-->
-                    <h3 id="create-username">Please create a username to start the game!</h3>
-                    <form onsubmit="saveUsername(event)">
-                        <label for="user-input">Username:</label>
-                        <input type="text" id="user-input" name="user-input" placeholder="Enter a username" required>
+            <div id="welcome" class="section show">
+                <!--create a username-->
+                <h3 id="create-username">Please create a username to start the game!</h3>
+                <form onsubmit="saveUsername(event)">
+                    <label for="user-input">Username:</label>
+                    <input type="text" id="user-input" name="user-input" placeholder="Enter a username" required>
+                    <div>
+                        <button>Submit</button>
+                    </div>
+                </form>
+                <div>
+                    <h4 id="rules">Rules:</h4>
+                    <ul id="instruction">
+                        <li>Create a username and click 'Submit'</li>
+                        <li>Do not refresh the page.</li>
+                        <li>Choose one of the 4 levels at which you would like to play.</li>
+                        <li>Answer 10 questions by clicking on your choosen answer.</li>
+                        <li>At the end your final score will display</li>
+                        <li>You can choose to play again.</li>
+                    </ul>
+                    <h3>Have Fun!!</h3>
+                </div>
+            </div>
+        </section>
+
+        <!--Choose level section-->
+        <section>
+            <div id="level" class="section hide">
+                <h2 id="user">Welcome User</h2>
+                <h3>Choose your level</h3>
+                <ul>
+                    <form onsubmit="gotoQuiz(event)">
+                        <input name="level" type="radio" value="Beginner" checked />
+                        <label>Beginner</label>
+                        <input name="level" type="radio" value="Intermediate" />
+                        <label>Intermediate</label>
+                        <input name="level" type="radio" value="Advanced" />
+                        <label>Advanced</label>
+                        <input name="level" type="radio" value="Expert" />
+                        <label>Expert</label>
                         <div>
-                            <button>Submit</button>
+                            <button>Next</button>
                         </div>
                     </form>
-                    <div>
-                        <h4 id="rules">Rules:</h4>
-                        <ul id="instruction">
-                            <li>Create a username and click 'Submit'</li>
-                            <li>Do not refresh the page.</li>
-                            <li>Choose one of the 4 levels at which you would like to play.</li>
-                            <li>Answer 10 questions by clicking on your choosen answer.</li>
-                            <li>At the end your final score will display</li>
-                            <li>You can choose to play again.</li>
-                        </ul>
-                        <h3>Have Fun!!</h3>
-                    </div>
-                </div>
-            </section>
+                </ul>
+            </div>
         </section>
+
     </main>
 
     <script src="assets/js/script.js"></script>
