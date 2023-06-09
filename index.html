@@ -20,6 +20,7 @@
             <div id="welcome" class="section show">
                 <!--create a username-->
                 <h3 id="create-username">Please create a username to start the game!</h3>
+
                 <form onsubmit="saveUsername(event)">
                     <label for="user-input">Username:</label>
                     <input type="text" id="user-input" name="user-input" placeholder="Enter a username" required>
@@ -46,22 +47,54 @@
         <section>
             <div id="level" class="section hide">
                 <h2 id="user">Welcome User</h2>
-                <h3>Choose your level</h3>
+                <h3>Choose Your Level</h3>
                 <ul>
+
                     <form onsubmit="gotoQuiz(event)">
-                        <input name="level" type="radio" value="Beginner" checked />
+                        <input name="level" type="radio" value="Beginner" checked>
                         <label>Beginner</label>
-                        <input name="level" type="radio" value="Intermediate" />
+                        <input name="level" type="radio" value="Intermediate">
                         <label>Intermediate</label>
-                        <input name="level" type="radio" value="Advanced" />
+                        <input name="level" type="radio" value="Advanced">
                         <label>Advanced</label>
-                        <input name="level" type="radio" value="Expert" />
+                        <input name="level" type="radio" value="Expert">
                         <label>Expert</label>
                         <div>
                             <button>Next</button>
                         </div>
                     </form>
                 </ul>
+            </div>
+        </section>
+
+        <!--Quiz section-->
+        <section>
+            <div id="quiz-div" class="section hide">
+                <div>
+                    <h5 id="level-choosen">Level Choosen:</h5>
+                </div>
+                <h4 id="quiz-question">What is the capital of USA</h4>
+
+                <form onsubmit="forQuiz(event)">
+                    <div>
+                        <input name="question" type="radio" value="Washington DC">
+                        <label name="label-option" class="label">Washington DC</label>
+                    </div>
+                    <div>
+                        <input name="question" type="radio" value="Atlanta">
+                        <label name="label-option" class="label">Atlanta</label>
+                    </div>
+                    <div>
+                        <input name="question" type="radio" value="New York">
+                        <label name="label-option" class="label">New York</label>
+                    </div>
+                </form>
+                <div id="score-tracker">
+                    <img src="green-tick.png" alt="green tick">
+                    <span id="score">0</span>
+                    <img src="red-x.png" alt="red x">
+                    <span id="failed">0</span>
+                </div>
             </div>
         </section>
 
