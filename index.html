@@ -5,101 +5,139 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--meta description and keywords-->
+    <meta name="description"
+        content="general knowledge quiz to test your general knowledge on history, movies, geography">
+    <meta name="keywords" content="knowledge quiz, general quiz, history quiz, geography quiz, , movies">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>General Knowledge Quiz</title>
 </head>
 
 <body>
-    <header>
-        <h1>General Knowledge Quiz</h1>
-        <p id="test-knowledge">Test your general Knowledge!</p>
-    </header>
-    <main>
-        <!--welcome section-->
-        <section>
-            <div id="welcome" class="section show">
-                <!--create a username-->
-                <h3 id="create-username">Please create a username to start the game!</h3>
-
-                <form onsubmit="saveUsername(event)">
-                    <label for="user-input">Username:</label>
-                    <input type="text" id="user-input" name="user-input" placeholder="Enter a username" required>
-                    <div>
-                        <button>Submit</button>
-                    </div>
-                </form>
-                <div>
-                    <h4 id="rules">Rules:</h4>
-                    <ul id="instruction">
-                        <li>Create a username and click 'Submit'</li>
-                        <li>Do not refresh the page.</li>
-                        <li>Choose one of the 4 levels at which you would like to play.</li>
-                        <li>Answer 10 questions by clicking on your choosen answer.</li>
-                        <li>At the end your final score will display</li>
-                        <li>You can choose to play again.</li>
-                    </ul>
-                    <h3>Have Fun!!</h3>
-                </div>
-            </div>
-        </section>
-
-        <!--Choose level section-->
-        <section>
-            <div id="level" class="section hide">
-                <h2 id="user">Welcome User</h2>
-                <h3>Choose Your Level</h3>
-                <ul>
-
-                    <form onsubmit="gotoQuiz(event)">
-                        <input name="level" type="radio" value="Beginner" checked>
-                        <label>Beginner</label>
-                        <input name="level" type="radio" value="Intermediate">
-                        <label>Intermediate</label>
-                        <input name="level" type="radio" value="Advanced">
-                        <label>Advanced</label>
-                        <input name="level" type="radio" value="Expert">
-                        <label>Expert</label>
+    <div id="all-section">
+        <div id="modal">
+            <header>
+                <h1>General Knowledge Quiz</h1>
+                <p id="test-knowledge">Test your general Knowledge!</p>
+            </header>
+            <main>
+                <!--welcome section-->
+                <section>
+                    <div id="welcome" class="section show">
+                        <!--create a username-->
+                        <h3 id="create-username">Please create a username to start the game!</h3>
+                        <!--this function is run when form is submited-->
+                        <form onsubmit="saveUsername(event)">
+                            <label for="user-input">Username:</label>
+                            <input type="text" id="user-input" name="user-input" placeholder="Enter a username"
+                                required>
+                            <div>
+                                <button type="submit" class="btn">Submit</button>
+                            </div>
+                        </form>
                         <div>
-                            <button>Next</button>
+                            <h4 id="rules">Rules:</h4>
+                            <ul id="instruction">
+                                <li>Create a username and click 'Submit'</li>
+                                <li>Do not refresh the page.</li>
+                                <li>Choose one of the 4 levels at which you would like to play.</li>
+                                <li>Answer 10 questions by clicking on your choosen answer.</li>
+                                <li>At the end your final score will display</li>
+                                <li>You can choose to play again.</li>
+                            </ul>
+                            <h3>Have Fun!!</h3>
                         </div>
-                    </form>
-                </ul>
-            </div>
-        </section>
-
-        <!--Quiz section-->
-        <section>
-            <div id="quiz-div" class="section hide">
-                <div>
-                    <h5 id="level-choosen">Level Choosen:</h5>
-                </div>
-                <h4 id="quiz-question">What is the capital of USA</h4>
-
-                <form onsubmit="forQuiz(event)">
-                    <div>
-                        <input name="question" type="radio" value="Washington DC">
-                        <label name="label-option" class="label">Washington DC</label>
                     </div>
-                    <div>
-                        <input name="question" type="radio" value="Atlanta">
-                        <label name="label-option" class="label">Atlanta</label>
-                    </div>
-                    <div>
-                        <input name="question" type="radio" value="New York">
-                        <label name="label-option" class="label">New York</label>
-                    </div>
-                </form>
-                <div id="score-tracker">
-                    <img src="green-tick.png" alt="green tick">
-                    <span id="score">0</span>
-                    <img src="red-x.png" alt="red x">
-                    <span id="failed">0</span>
-                </div>
-            </div>
-        </section>
+                </section>
 
-    </main>
+                <!--Choose level section-->
+                <section>
+                    <div id="level" class="section hide">
+                        <h2 id="user">Welcome User</h2>
+                        <h3>Choose Your Level</h3>
+                        <ul>
+                            <!--this function is run when form is submited-->
+                            <form onsubmit="gotoQuiz(event)">
+                                <input name="level" type="radio" value="Beginner" checked>
+                                <label>Beginner</label>
+                                <input name="level" type="radio" value="Intermediate">
+                                <label>Intermediate</label>
+                                <input name="level" type="radio" value="Advanced">
+                                <label>Advanced</label>
+                                <input name="level" type="radio" value="Expert">
+                                <label>Expert</label>
+                                <div>
+                                    <button type="next" class="btn">Next</button>
+                                </div>
+                            </form>
+                        </ul>
+                    </div>
+                </section>
 
+                <!--Quiz section and score tracker-->
+                <section>
+                    <div id="quiz-div" class="section hide">
+                        <div>
+                            <h5 id="level-choosen">Level Choosen:</h5>
+                        </div>
+                        <h4 id="quiz-question">What is the capital of USA</h4>
+                        <!--this function is run when form is submited-->
+                        <form onsubmit="forQuiz(event)">
+                            <div>
+                                <input name="question" type="radio" value="Washington DC">
+                                <label name="label-option" class="label">Washington DC</label>
+                            </div>
+                            <div>
+                                <input name="question" type="radio" value="Atlanta">
+                                <label name="label-option" class="label">Atlanta</label>
+                            </div>
+                            <div>
+                                <input name="question" type="radio" value="New York">
+                                <label name="label-option" class="label">New York</label>
+                            </div>
+                        </form>
+                        <div id="score-tracker">
+                            <img src="green-tick.png" alt="green tick">
+                            <span id="score">0</span>
+                            <img src="red-x.png" alt="red x">
+                            <span id="failed">0</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!--End of quiz section-->
+                <section>
+                    <div id="end-of-quiz-div" class="sections hide">
+                        <h2>Congratulations <span id="congratulate-user"></span></h2>
+                        <h4>Your final score is <span id="final-score"></span> out of 10</h4>
+                        <h4>Do you want to play again?</h4>
+                        <button id="play-again">Play Again</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <!--footer with social media links-->
+    <footer>
+        <a href="https://facebook.com" target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)">
+            <i class="fa-brands fa-facebook">
+            </i>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)">
+            <i class="fa-brands fa-instagram"></i>
+            </i>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)">
+            <i class="fa-brands fa-youtube"></i>
+            </i>
+        </a>
+    </footer>
+    <!--font awesome script-->
+    <script src="https://kit.fontawesome.com/2a27a7ddec.js" crossorigin="anonymous"></script>
+    <!--JavaScript link-->
     <script src="assets/js/script.js"></script>
 </body>
 
